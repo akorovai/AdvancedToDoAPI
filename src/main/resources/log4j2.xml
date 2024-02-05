@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+
+    <Properties>
+        <Property name="logDir">./src/main/resources/logs/</Property>
+    </Properties>
+
+    <Appenders>
+        <!-- Console Appender -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SS} [%t] %-5level %logger - %msg%n"/>
+        </Console>
+
+        <!-- File Appender for info level -->
+        <File name="InfoFile" fileName="${logDir}info.log">
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger - %msg%n"/>
+        </File>
+
+        <!-- File Appender for warn level -->
+        <File name="WarnFile" fileName="${logDir}warn.log">
+            <ThresholdFilter level="warn" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger - %msg%n"/>
+        </File>
+
+        <!-- File Appender for error level -->
+        <File name="ErrorFile" fileName="${logDir}error.log">
+            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger - %msg%n"/>
+        </File>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="dev.akorovai.AdvancedToDoAPI" additivity="false" level="debug">
+            <AppenderRef ref="WarnFile"/>
+            <AppenderRef ref="InfoFile"/>
+            <AppenderRef ref="ErrorFile"/>
+            <AppenderRef ref="Console" />
+        </Logger>
+
+        <Root level="debug">
+            <AppenderRef ref="InfoFile"/>
+            <AppenderRef ref="WarnFile"/>
+            <AppenderRef ref="ErrorFile"/>
+        </Root>
+    </Loggers>
+
+</Configuration>
