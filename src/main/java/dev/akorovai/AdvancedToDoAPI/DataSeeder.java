@@ -1,9 +1,9 @@
 package dev.akorovai.AdvancedToDoAPI;
 
-import dev.akorovai.AdvancedToDoAPI.entities.Category;
-import dev.akorovai.AdvancedToDoAPI.entities.Label;
-import dev.akorovai.AdvancedToDoAPI.repositories.CategoryRepository;
-import dev.akorovai.AdvancedToDoAPI.repositories.LabelRepository;
+import dev.akorovai.AdvancedToDoAPI.entity.*;
+import dev.akorovai.AdvancedToDoAPI.repository.CategoryRepository;
+import dev.akorovai.AdvancedToDoAPI.repository.LabelRepository;
+import dev.akorovai.AdvancedToDoAPI.repository.TaskRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -18,13 +18,24 @@ public class DataSeeder implements CommandLineRunner {
 
     private final CategoryRepository categoryRepository;
     private final LabelRepository labelRepository;
+    private final TaskRepository taskRepository;
 
     @Override
     public void run(String... args) throws Exception {
-        seedCategories();
+        seedData();
     }
 
-    private void seedCategories() {
+    private void seedData() {
+        List<Category> categories = createCategories();
+        List<Label> labels = createLabels();
+
+
+        categoryRepository.saveAll(categories);
+        labelRepository.saveAll(labels);
+    
+    }
+
+    private List<Category> createCategories() {
         List<Category> categoryList = new ArrayList<>();
 
         Category category1 = new Category();
@@ -39,8 +50,10 @@ public class DataSeeder implements CommandLineRunner {
         category2.setModifiedAt(LocalDateTime.now());
         categoryList.add(category2);
 
-        categoryRepository.saveAll(categoryList);
+        return categoryList;
+    }
 
+    private List<Label> createLabels() {
         List<Label> labelList = new ArrayList<>();
 
         Label label1 = new Label();
@@ -55,6 +68,8 @@ public class DataSeeder implements CommandLineRunner {
         label2.setModifiedAt(LocalDateTime.now());
         labelList.add(label2);
 
-        labelRepository.saveAll(labelList);
+        return labelList;
     }
+
+
 }
