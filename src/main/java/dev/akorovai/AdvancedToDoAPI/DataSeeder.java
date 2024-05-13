@@ -1,9 +1,8 @@
 package dev.akorovai.AdvancedToDoAPI;
 
-import dev.akorovai.AdvancedToDoAPI.entity.*;
-import dev.akorovai.AdvancedToDoAPI.repository.CategoryRepository;
-import dev.akorovai.AdvancedToDoAPI.repository.LabelRepository;
-import dev.akorovai.AdvancedToDoAPI.repository.TaskRepository;
+import dev.akorovai.AdvancedToDoAPI.category.Category;
+import dev.akorovai.AdvancedToDoAPI.category.CategoryRepository;
+import dev.akorovai.AdvancedToDoAPI.task.TaskRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -17,7 +16,7 @@ import java.util.List;
 public class DataSeeder implements CommandLineRunner {
 
     private final CategoryRepository categoryRepository;
-    private final LabelRepository labelRepository;
+
     private final TaskRepository taskRepository;
 
     @Override
@@ -27,12 +26,7 @@ public class DataSeeder implements CommandLineRunner {
 
     private void seedData() {
         List<Category> categories = createCategories();
-        List<Label> labels = createLabels();
-
-
         categoryRepository.saveAll(categories);
-        labelRepository.saveAll(labels);
-    
     }
 
     private List<Category> createCategories() {
@@ -53,23 +47,7 @@ public class DataSeeder implements CommandLineRunner {
         return categoryList;
     }
 
-    private List<Label> createLabels() {
-        List<Label> labelList = new ArrayList<>();
 
-        Label label1 = new Label();
-        label1.setTitle("Urgent");
-        label1.setCreatedAt(LocalDateTime.now());
-        label1.setModifiedAt(LocalDateTime.now());
-        labelList.add(label1);
-
-        Label label2 = new Label();
-        label2.setTitle("Important");
-        label2.setCreatedAt(LocalDateTime.now());
-        label2.setModifiedAt(LocalDateTime.now());
-        labelList.add(label2);
-
-        return labelList;
-    }
 
 
 }

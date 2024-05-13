@@ -1,4 +1,4 @@
-package dev.akorovai.AdvancedToDoAPI.entity;
+package dev.akorovai.AdvancedToDoAPI.category;
 
 import dev.akorovai.AdvancedToDoAPI.task.Task;
 import jakarta.persistence.*;
@@ -10,31 +10,29 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.Objects;
+import java.util.Set;
 
 @Getter
 @Setter
 @ToString
 @RequiredArgsConstructor
 @Entity
-@Table(name = "TASK_HISTORY")
-public class TaskHistory {
+@Table(name = "CATEGORY")
+@Builder
+@AllArgsConstructor
+public class Category {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "history_id")
+    @Column(name = "category_id")
     private Long id;
 
     @NotNull
-    @Column(name = "new_status", nullable = false)
-    private Status newStatus;
+    @Column(name = "name", length = 30, nullable = false)
+    private String name;
 
-    @NotNull
-    @Column(name = "timestamp", nullable = false)
-    private LocalDateTime timestamp;
-
-    @NotNull
-    @ManyToOne
-    @JoinColumn(name = "task_id")
-    private Task task;
+    @OneToMany(mappedBy = "category", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private Set<Task> tasks;
 
     @CreationTimestamp
     @Column(name = "created_at", updatable = false, columnDefinition = "TIMESTAMP(3)")
@@ -44,14 +42,12 @@ public class TaskHistory {
     @Column(name = "modified_at",columnDefinition = "TIMESTAMP(3)")
     private LocalDateTime modifiedAt;
 
-
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        TaskHistory taskHistory = (TaskHistory) o;
-        return Objects.equals(id, taskHistory.id);
+        Category category = (Category) o;
+        return Objects.equals(id, category.id);
     }
 
     @Override

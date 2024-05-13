@@ -1,7 +1,7 @@
 package dev.akorovai.AdvancedToDoAPI.dto;
 
 import dev.akorovai.AdvancedToDoAPI.entity.Status;
-import dev.akorovai.AdvancedToDoAPI.entity.Task;
+import dev.akorovai.AdvancedToDoAPI.task.Task;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.Hibernate;
