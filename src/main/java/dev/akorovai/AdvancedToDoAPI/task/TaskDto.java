@@ -27,6 +27,4 @@ public class TaskDto {
     private Status status;
 
     private TaskType taskType;
-
-
 }

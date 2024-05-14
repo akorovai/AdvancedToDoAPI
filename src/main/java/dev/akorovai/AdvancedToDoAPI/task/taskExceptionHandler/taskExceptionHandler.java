@@ -27,4 +27,9 @@ public class taskExceptionHandler {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(responseObject);
     }
 
+    @ExceptionHandler(InappropriateProgressStatusException.class)
+    public ResponseEntity<ResponseObject> inappropriateProgressStatusException(InappropriateProgressStatusException ex){
+        ResponseObject responseObject = new ResponseObject(HttpStatus.CONFLICT.value(), ex.getMessage());
+        return ResponseEntity.status(HttpStatus.CONFLICT).body(responseObject);
+    }
 }
