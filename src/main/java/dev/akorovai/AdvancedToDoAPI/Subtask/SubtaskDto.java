@@ -1,6 +1,6 @@
-package dev.akorovai.AdvancedToDoAPI.dto;
+package dev.akorovai.AdvancedToDoAPI.Subtask;
 
-import dev.akorovai.AdvancedToDoAPI.entity.Status;
+import dev.akorovai.AdvancedToDoAPI.task.Status;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

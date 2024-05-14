@@ -1,7 +1,6 @@
 package dev.akorovai.AdvancedToDoAPI.task;
 
 import dev.akorovai.AdvancedToDoAPI.category.CategoryDto;
-import dev.akorovai.AdvancedToDoAPI.entity.*;
 import lombok.*;
 
 

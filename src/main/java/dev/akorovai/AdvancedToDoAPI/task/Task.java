@@ -1,10 +1,8 @@
 package dev.akorovai.AdvancedToDoAPI.task;
 
 import dev.akorovai.AdvancedToDoAPI.category.Category;
-import dev.akorovai.AdvancedToDoAPI.dto.Subtask;
-import dev.akorovai.AdvancedToDoAPI.entity.Status;
-import dev.akorovai.AdvancedToDoAPI.entity.TaskHistory;
-import dev.akorovai.AdvancedToDoAPI.entity.TaskType;
+import dev.akorovai.AdvancedToDoAPI.Subtask.Subtask;
+import dev.akorovai.AdvancedToDoAPI.taskhistory.TaskHistory;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;

@@ -3,8 +3,6 @@ package dev.akorovai.AdvancedToDoAPI.task;
 import dev.akorovai.AdvancedToDoAPI.category.Category;
 import dev.akorovai.AdvancedToDoAPI.category.CategoryRepository;
 import dev.akorovai.AdvancedToDoAPI.category.categoryExceptions.CategoryNotFoundException;
-import dev.akorovai.AdvancedToDoAPI.entity.Status;
-import dev.akorovai.AdvancedToDoAPI.entity.TaskType;
 import dev.akorovai.AdvancedToDoAPI.task.taskExceptionHandler.*;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
@@ -22,6 +20,7 @@ import java.util.stream.Collectors;
 
 @Log4j2
 @Service
+@Transactional
 @RequiredArgsConstructor(onConstructor_ = {@Autowired})
 public class TaskServiceImpl implements TaskService {
 
@@ -41,7 +40,6 @@ public class TaskServiceImpl implements TaskService {
 
 
     @Override
-    @Transactional
     public TaskDto addNewTask(NewTaskDto newTaskDto) {
 
         validateTaskType(newTaskDto);
@@ -63,7 +61,6 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    @Transactional
     public void deleteTaskById(Long taskId) {
         Task task = taskRepository.findById(taskId).orElseThrow(() -> new TaskNotFoundException(taskId));
         taskRepository.delete(task);
@@ -72,7 +69,6 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    @Transactional
     public TaskDto modifyTask(Long idTask, ModifiedTaskDto mtd) {
         Optional<Task> optionalTask = taskRepository.findById(idTask);
         if (optionalTask.isEmpty()) {
@@ -119,7 +115,6 @@ public class TaskServiceImpl implements TaskService {
 
 
     @Override
-    @Transactional
     public TaskDto moveToNextStep(Long taskId) {
         Task task = taskRepository.findById(taskId).orElseThrow(() -> new TaskNotFoundException(taskId));
         Status currentStatus = task.getStatus();

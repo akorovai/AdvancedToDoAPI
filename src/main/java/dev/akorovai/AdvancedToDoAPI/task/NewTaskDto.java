@@ -1,7 +1,6 @@
 package dev.akorovai.AdvancedToDoAPI.task;
 
-import dev.akorovai.AdvancedToDoAPI.dto.SubtaskDto;
-import dev.akorovai.AdvancedToDoAPI.entity.*;
+import dev.akorovai.AdvancedToDoAPI.Subtask.SubtaskDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

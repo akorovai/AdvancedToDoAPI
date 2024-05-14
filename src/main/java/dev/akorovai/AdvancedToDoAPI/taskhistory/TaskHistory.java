@@ -1,5 +1,6 @@
-package dev.akorovai.AdvancedToDoAPI.entity;
+package dev.akorovai.AdvancedToDoAPI.taskhistory;
 
+import dev.akorovai.AdvancedToDoAPI.task.Status;
 import dev.akorovai.AdvancedToDoAPI.task.Task;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;

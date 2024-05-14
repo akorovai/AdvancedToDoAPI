@@ -1,6 +1,6 @@
 package dev.akorovai.AdvancedToDoAPI.task.taskExceptionHandler;
 
-import dev.akorovai.AdvancedToDoAPI.entity.TaskType;
+import dev.akorovai.AdvancedToDoAPI.task.TaskType;
 import lombok.extern.log4j.Log4j2;
 @Log4j2
 public class TaskTypeNotFoundException extends RuntimeException {

@@ -1,6 +1,6 @@
 package dev.akorovai.AdvancedToDoAPI.task.taskExceptionHandler;
 
-import dev.akorovai.AdvancedToDoAPI.entity.Status;
+import dev.akorovai.AdvancedToDoAPI.task.Status;
 import lombok.extern.log4j.Log4j2;
 
 @Log4j2

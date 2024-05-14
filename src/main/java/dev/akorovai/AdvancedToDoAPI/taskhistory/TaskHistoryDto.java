@@ -1,6 +1,6 @@
-package dev.akorovai.AdvancedToDoAPI.dto;
+package dev.akorovai.AdvancedToDoAPI.taskhistory;
 
-import dev.akorovai.AdvancedToDoAPI.entity.Status;
+import dev.akorovai.AdvancedToDoAPI.task.Status;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,10 +13,10 @@ import java.time.LocalDateTime;
 public class TaskHistoryDto {
     private Long id;
 
-
     private Status newStatus;
 
-
     private LocalDateTime timestamp;
+
+    private Long IdTask;
 
 }
