@@ -1,4 +1,4 @@
-package dev.akorovai.AdvancedToDoAPI.Subtask;
+package dev.akorovai.AdvancedToDoAPI.subtask;
 
 import dev.akorovai.AdvancedToDoAPI.task.Status;
 import lombok.Getter;

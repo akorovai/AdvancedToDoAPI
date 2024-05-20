@@ -1,10 +1,8 @@
 package dev.akorovai.AdvancedToDoAPI.taskhistory;
 
-import org.springframework.context.annotation.Lazy;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
-@Lazy
-@Repository
-public interface TaskHistoryRepository extends JpaRepository<TaskHistoryRepository, Long> {
+public interface TaskHistoryRepository extends JpaRepository<TaskHistory, Long>, JpaSpecificationExecutor<TaskHistory> {
 }
+

@@ -1,10 +1,9 @@
 package dev.akorovai.AdvancedToDoAPI.task;
 
-import dev.akorovai.AdvancedToDoAPI.Subtask.SubtaskDto;
+import dev.akorovai.AdvancedToDoAPI.subtask.SubtaskDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 
 import java.time.LocalDateTime;
 import java.util.Set;

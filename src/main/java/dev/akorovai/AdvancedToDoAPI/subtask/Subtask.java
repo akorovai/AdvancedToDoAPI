@@ -1,9 +1,12 @@
-package dev.akorovai.AdvancedToDoAPI.Subtask;
+package dev.akorovai.AdvancedToDoAPI.subtask;
 
 import dev.akorovai.AdvancedToDoAPI.task.Status;
 import dev.akorovai.AdvancedToDoAPI.task.Task;
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.Hibernate;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;

@@ -1,4 +1,4 @@
-package dev.akorovai.AdvancedToDoAPI.Subtask;
+package dev.akorovai.AdvancedToDoAPI.subtask;
 
 import org.springframework.context.annotation.Lazy;
 import org.springframework.data.jpa.repository.JpaRepository;
