@@ -37,10 +37,20 @@ public class TaskServiceImpl implements TaskService {
 
     @Override
     public TaskDto getTaskById(Long IdTask) throws TaskNotFoundException {
-        Task task = taskRepository.findById(IdTask).orElseThrow(() -> new TaskNotFoundException(IdTask));
+        Task task = taskRepository.findById(IdTask)
+                .orElseThrow(() -> new TaskNotFoundException(IdTask));
         log.info("Retrieved task successfully: {}", task.getTitle());
-        return modelMapper.map(task, TaskDto.class);
+
+
+        List<SubtaskDto> subtaskDtos = task.getSubtasks().stream()
+                .map(subtask -> modelMapper.map(subtask, SubtaskDto.class))
+                .collect(Collectors.toList());
+        TaskDto taskDto = modelMapper.map(task, TaskDto.class);
+        taskDto.setSubtasks(subtaskDtos);
+
+        return taskDto;
     }
+
 
     @Override
     public TaskDto addNewTask(NewTaskDto newTaskDto) {

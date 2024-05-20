@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @Setter
@@ -28,4 +29,5 @@ public class TaskDto {
     private Status status;
 
     private TaskType taskType;
+    private List<SubtaskDto> subtasks; // Add this line
 }
