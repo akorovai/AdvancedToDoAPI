@@ -1,8 +1,7 @@
 package dev.akorovai.AdvancedToDoAPI.controller;
 
-import dev.akorovai.AdvancedToDoAPI.category.CategoryController;
-import dev.akorovai.AdvancedToDoAPI.category.CategoryDto;
-import dev.akorovai.AdvancedToDoAPI.category.CategoryService;
+import dev.akorovai.AdvancedToDoAPI.dto.CategoryDto;
+import dev.akorovai.AdvancedToDoAPI.service.CategoryService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -14,7 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @WebMvcTest(CategoryController.class)

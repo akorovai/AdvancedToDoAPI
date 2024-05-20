@@ -1,13 +1,12 @@
 package dev.akorovai.AdvancedToDoAPI.service;
 
-import dev.akorovai.AdvancedToDoAPI.category.CategoryDto;
-import dev.akorovai.AdvancedToDoAPI.category.NewCategoryDto;
-import dev.akorovai.AdvancedToDoAPI.category.Category;
-import dev.akorovai.AdvancedToDoAPI.category.categoryExceptions.CategoryNotFoundException;
-import dev.akorovai.AdvancedToDoAPI.category.CategoryServiceImpl;
-import dev.akorovai.AdvancedToDoAPI.category.categoryExceptions.DuplicateCategoryException;
-import dev.akorovai.AdvancedToDoAPI.category.categoryExceptions.EmptyCategoryListException;
-import dev.akorovai.AdvancedToDoAPI.category.CategoryRepository;
+import dev.akorovai.AdvancedToDoAPI.dto.CategoryDto;
+import dev.akorovai.AdvancedToDoAPI.dto.NewCategoryDto;
+import dev.akorovai.AdvancedToDoAPI.entity.Category;
+import dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.CategoryNotFoundException;
+import dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.DuplicateCategoryException;
+import dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.EmptyCategoryListException;
+import dev.akorovai.AdvancedToDoAPI.repository.CategoryRepository;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

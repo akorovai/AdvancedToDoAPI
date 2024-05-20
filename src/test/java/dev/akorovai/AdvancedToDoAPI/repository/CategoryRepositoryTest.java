@@ -1,7 +1,6 @@
 package dev.akorovai.AdvancedToDoAPI.repository;
 
-import dev.akorovai.AdvancedToDoAPI.category.Category;
-import dev.akorovai.AdvancedToDoAPI.category.CategoryRepository;
+import dev.akorovai.AdvancedToDoAPI.entity.Category;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
