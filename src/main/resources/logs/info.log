@@ -1115,3 +1115,333 @@ dev.akorovai.AdvancedToDoAPI.controller.TaskController#modifyTask(ModifiedTaskDt
 19:52:15.578 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
 19:52:15.584 [restartedMain] INFO  dev.akorovai.AdvancedToDoAPI.AdvancedToDoApiApplication - Started AdvancedToDoApiApplication in 0.937 seconds (process running for 13.952)
 19:52:15.630 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+19:53:00.466 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown initiated...
+19:53:00.473 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-3 - Shutdown completed.
+14:04:52.217 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+14:04:52.260 [restartedMain] INFO  dev.akorovai.AdvancedToDoAPI.AdvancedToDoApiApplication - Starting AdvancedToDoApiApplication using Java 17.0.11 with PID 18840 (C:\Users\aktey\Desktop\Projects\AdvancedToDoAPI\target\classes started by aktey in C:\Users\aktey\Desktop\Projects\AdvancedToDoAPI)
+14:04:52.262 [restartedMain] INFO  dev.akorovai.AdvancedToDoAPI.AdvancedToDoApiApplication - No active profile set, falling back to 1 default profile: "default"
+14:04:52.318 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+14:04:52.318 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+14:04:53.182 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+14:04:53.254 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 57 ms. Found 4 JPA repository interfaces.
+14:04:53.805 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+14:04:53.816 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+14:04:53.818 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+14:04:53.819 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+14:04:53.890 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+14:04:53.890 [restartedMain] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1572 ms
+14:04:53.951 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+14:04:58.292 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn1: url=jdbc:h2:file:./data/tasks user=AKOROVAI
+14:04:58.294 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+14:04:58.301 [restartedMain] INFO  org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/tasks'
+14:04:58.480 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+14:04:58.513 [restartedMain] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+14:04:58.756 [restartedMain] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+14:04:59.750 [restartedMain] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+14:04:59.789 [restartedMain] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:05:00.774 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+14:05:00.798 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+14:05:00.822 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+14:05:00.837 [restartedMain] INFO  dev.akorovai.AdvancedToDoAPI.AdvancedToDoApiApplication - Started AdvancedToDoApiApplication in 9.44 seconds (process running for 10.846)
+14:05:07.127 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+14:05:07.129 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+14:10:44.297 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:10:44.343 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+14:10:44.356 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:10:44.376 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+14:10:44.390 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:10:44.399 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:10:44.410 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:10:44.426 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:10:44.435 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+14:10:44.454 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:10:44.461 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.NotSimpleTaskWithInsufficientSubtasksException - A task other than SIMPLE must have at least two subtasks, but found only 0.
+14:10:44.471 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+14:13:13.216 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:13:13.278 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+14:13:13.295 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:13.304 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+14:13:13.320 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:13.331 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:13.339 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:13.360 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:13:13.368 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+14:13:13.377 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:13.388 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.NotSimpleTaskWithInsufficientSubtasksException - A task other than SIMPLE must have at least two subtasks, but found only 0.
+14:13:13.399 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+14:13:41.436 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:13:41.512 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+14:13:41.545 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:41.560 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+14:13:41.575 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:41.584 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:41.591 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:41.614 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:13:41.622 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+14:13:41.633 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:41.640 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.NotSimpleTaskWithInsufficientSubtasksException - A task other than SIMPLE must have at least two subtasks, but found only 0.
+14:13:41.650 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+14:15:16.491 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:15:16.550 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+14:15:16.567 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:15:16.577 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+14:15:16.578 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task to TaskDto: dev.akorovai.AdvancedToDoAPI.dto.TaskDto@6af91cc8
+14:15:16.588 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:15:16.599 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:15:16.611 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:15:16.632 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:15:16.643 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+14:15:16.650 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:15:16.657 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.NotSimpleTaskWithInsufficientSubtasksException - A task other than SIMPLE must have at least two subtasks, but found only 0.
+14:15:16.665 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+14:16:33.057 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:16:33.120 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+14:16:33.144 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:16:33.158 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+14:16:33.159 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task to TaskDto: dev.akorovai.AdvancedToDoAPI.dto.TaskDto@6af91cc8
+14:16:33.171 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:16:33.178 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:16:33.185 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:16:33.209 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:16:33.222 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+14:16:33.229 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:16:33.242 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+14:18:56.171 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:18:56.238 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+14:18:56.257 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:18:56.268 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+14:18:56.269 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task to TaskDto: dev.akorovai.AdvancedToDoAPI.dto.TaskDto@536d97f8
+14:18:56.277 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:18:56.287 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:18:56.293 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:18:56.327 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:18:56.341 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+14:18:56.349 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:18:56.356 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:18:56.365 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+14:20:06.378 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:20:06.448 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+14:20:06.464 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:06.473 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+14:20:06.473 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task to TaskDto: dev.akorovai.AdvancedToDoAPI.dto.TaskDto@6232ffdb
+14:20:06.485 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:06.493 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:06.501 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:06.523 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:20:06.537 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+14:20:06.545 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:06.559 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+14:20:36.867 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+14:20:36.900 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:36.912 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+14:20:36.912 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task to TaskDto: dev.akorovai.AdvancedToDoAPI.dto.TaskDto@330c1f61
+14:20:36.922 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:36.930 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:36.939 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:36.964 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:20:36.977 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+14:20:36.983 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:37.000 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+14:22:40.071 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:23:57.257 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:24:49.309 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+14:24:49.332 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:24:49.343 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+14:24:49.345 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task to TaskDto: dev.akorovai.AdvancedToDoAPI.dto.TaskDto@330c1f61
+14:24:49.358 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:24:49.365 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:24:49.372 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:24:49.396 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:24:49.410 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+14:24:49.418 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:24:49.426 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:24:49.438 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+14:32:43.079 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+14:32:43.105 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:32:43.115 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+14:32:43.116 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task to TaskDto: dev.akorovai.AdvancedToDoAPI.dto.TaskDto@52b06bef
+14:32:43.126 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:32:43.133 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:32:43.140 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:32:43.177 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:32:43.188 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+14:32:43.195 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:32:43.200 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:32:43.207 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+14:33:14.667 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:33:33.831 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+14:33:33.855 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:33:33.866 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+14:33:33.867 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task to TaskDto: dev.akorovai.AdvancedToDoAPI.dto.TaskDto@52b06bef
+14:33:33.877 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:33:33.885 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:33:33.893 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:33:33.929 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:33:33.944 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+14:33:33.951 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:33:33.956 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:33:33.965 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+14:34:04.472 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:35:03.268 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:35:43.693 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:36:34.757 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:36:45.164 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+14:36:45.201 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:36:45.215 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+14:36:45.215 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task to TaskDto: dev.akorovai.AdvancedToDoAPI.dto.TaskDto@52b06bef
+14:36:45.230 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:36:45.243 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:36:45.254 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:36:45.301 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:36:45.310 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+14:36:45.319 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:36:45.327 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:36:45.337 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+14:48:16.409 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+14:48:16.448 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:48:16.458 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+14:48:16.460 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task to TaskDto: dev.akorovai.AdvancedToDoAPI.dto.TaskDto@52b06bef
+14:48:16.469 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:48:16.479 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:48:16.486 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:48:16.558 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:48:16.565 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+14:48:16.573 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:48:16.580 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:48:16.592 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+14:49:57.449 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:50:59.596 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.CategoryNotFoundException - Category not found with ID: 1
+14:51:10.943 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.CategoryNotFoundException - Category not found with ID: 1
+14:51:10.977 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+14:51:11.001 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:51:11.010 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+14:51:11.011 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task to TaskDto: dev.akorovai.AdvancedToDoAPI.dto.TaskDto@6e6d4780
+14:51:11.021 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:51:11.028 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:51:11.035 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:51:11.089 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:51:11.094 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+14:51:11.102 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:51:11.107 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:51:11.123 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+14:52:52.078 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.CategoryNotFoundException - Category not found with ID: 1
+14:52:52.120 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+14:52:52.140 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:52:52.148 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+14:52:52.149 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task to TaskDto: dev.akorovai.AdvancedToDoAPI.dto.TaskDto@5349b246
+14:52:52.161 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:52:52.170 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:52:52.176 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:52:58.580 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:52:58.586 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+14:52:58.592 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:53:47.475 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:53:47.575 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+14:59:16.610 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapping NewTaskDto to Task: dev.akorovai.AdvancedToDoAPI.dto.NewTaskDto@1b7a52dd
+14:59:16.625 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object: null
+14:59:16.628 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:59:16.686 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+14:59:16.710 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:59:16.718 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+14:59:16.718 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task to TaskDto: dev.akorovai.AdvancedToDoAPI.dto.TaskDto@1df1ced0
+14:59:16.730 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:59:16.736 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:59:16.743 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:59:16.808 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+14:59:16.815 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+14:59:16.820 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:59:16.826 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapping NewTaskDto to Task: dev.akorovai.AdvancedToDoAPI.dto.NewTaskDto@1a8df0b3
+14:59:16.826 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object: null
+14:59:16.827 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:59:16.836 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+15:01:08.191 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.CategoryNotFoundException - Category not found with ID: 1
+15:01:08.233 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+15:01:08.256 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:01:08.266 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+15:01:08.267 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task to TaskDto: dev.akorovai.AdvancedToDoAPI.dto.TaskDto@5349b246
+15:01:08.279 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:01:08.285 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:01:08.294 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:01:08.360 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+15:01:08.366 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+15:01:08.375 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:03:59.386 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+15:03:59.405 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+15:06:43.615 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.CategoryNotFoundException - Category not found with ID: 1
+15:06:43.659 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+15:06:43.682 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:06:43.690 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+15:06:43.691 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task to TaskDto: dev.akorovai.AdvancedToDoAPI.dto.TaskDto@1b495d4
+15:06:43.702 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:06:43.713 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:06:43.720 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:06:43.786 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+15:06:43.792 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+15:06:43.798 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:06:43.825 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+15:08:51.358 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.CategoryNotFoundException - Category not found with ID: 1
+15:08:51.397 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+15:08:51.415 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:08:51.424 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+15:08:51.425 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task to TaskDto: dev.akorovai.AdvancedToDoAPI.dto.TaskDto@6e6d4780
+15:08:51.433 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:08:51.440 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:08:51.449 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:08:51.504 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+15:08:51.512 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+15:08:51.518 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:08:51.538 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+15:23:50.512 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+15:30:17.260 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.1.Final
+15:30:17.298 [restartedMain] INFO  dev.akorovai.AdvancedToDoAPI.AdvancedToDoApiApplication - Starting AdvancedToDoApiApplication using Java 17.0.11 with PID 13920 (C:\Users\aktey\Desktop\Projects\AdvancedToDoAPI\target\classes started by aktey in C:\Users\aktey\Desktop\Projects\AdvancedToDoAPI)
+15:30:17.301 [restartedMain] INFO  dev.akorovai.AdvancedToDoAPI.AdvancedToDoApiApplication - No active profile set, falling back to 1 default profile: "default"
+15:30:17.352 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+15:30:17.353 [restartedMain] INFO  org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+15:30:18.089 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:30:18.155 [restartedMain] INFO  org.springframework.data.repository.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 4 JPA repository interfaces.
+15:30:18.690 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+15:30:18.700 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+15:30:18.703 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+15:30:18.703 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.18]
+15:30:18.772 [restartedMain] INFO  org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+15:30:18.772 [restartedMain] INFO  org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1419 ms
+15:30:18.828 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+15:30:18.959 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:file:./data/tasks user=AKOROVAI
+15:30:18.961 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+15:30:18.971 [restartedMain] INFO  org.springframework.boot.autoconfigure.h2.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:./data/tasks'
+15:30:19.139 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.1.Final
+15:30:19.168 [restartedMain] INFO  org.hibernate.cache.internal.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+15:30:19.385 [restartedMain] INFO  org.springframework.orm.jpa.persistenceunit.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+15:30:20.433 [restartedMain] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+15:30:20.486 [restartedMain] INFO  org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:30:21.474 [restartedMain] INFO  org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+15:30:21.496 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+15:30:21.515 [restartedMain] INFO  org.springframework.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path ''
+15:30:21.530 [restartedMain] INFO  dev.akorovai.AdvancedToDoAPI.AdvancedToDoApiApplication - Started AdvancedToDoApiApplication in 4.986 seconds (process running for 5.738)
+15:30:28.323 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+15:30:28.330 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+15:30:38.268 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.CategoryNotFoundException - Category not found with ID: 1
+15:30:38.307 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+15:30:38.328 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:30:38.336 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+15:30:38.336 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task to TaskDto: dev.akorovai.AdvancedToDoAPI.dto.TaskDto@6e6d4780
+15:30:38.349 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:30:38.358 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:30:38.367 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:30:38.446 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+15:30:38.454 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+15:30:38.462 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:30:38.489 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null
+15:31:11.331 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.CategoryNotFoundException - Category not found with ID: 1
+15:31:11.368 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Retrieved task successfully: Sample Task
+15:31:11.386 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:31:11.395 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to next step. New status: IN_PROGRESS
+15:31:11.395 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task to TaskDto: dev.akorovai.AdvancedToDoAPI.dto.TaskDto@526b2f3e
+15:31:11.405 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:31:11.413 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:31:11.422 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:31:11.483 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task 1 moved to previous step. New status: IN_PROGRESS
+15:31:11.492 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task deleted successfully with ID: 1
+15:31:11.499 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:31:11.506 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - New task added successfully: null
+15:31:11.512 [main] INFO  dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Task modified successfully: null

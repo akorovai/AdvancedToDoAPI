@@ -1,0 +1,25 @@
+14:10:44.297 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:10:44.461 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.NotSimpleTaskWithInsufficientSubtasksException - A task other than SIMPLE must have at least two subtasks, but found only 0.
+14:13:13.216 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:13:13.388 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.NotSimpleTaskWithInsufficientSubtasksException - A task other than SIMPLE must have at least two subtasks, but found only 0.
+14:13:41.436 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:13:41.640 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.NotSimpleTaskWithInsufficientSubtasksException - A task other than SIMPLE must have at least two subtasks, but found only 0.
+14:15:16.491 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:15:16.657 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.NotSimpleTaskWithInsufficientSubtasksException - A task other than SIMPLE must have at least two subtasks, but found only 0.
+14:16:33.057 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:18:56.171 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:20:06.378 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:22:40.071 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:23:57.257 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:24:49.426 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:32:43.200 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:33:14.667 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:33:33.956 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:36:45.327 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:48:16.580 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:49:57.449 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:51:11.107 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:53:47.475 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:59:16.628 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:59:16.827 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+15:03:59.386 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null

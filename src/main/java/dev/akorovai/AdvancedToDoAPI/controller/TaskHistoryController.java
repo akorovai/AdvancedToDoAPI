@@ -16,7 +16,7 @@ import java.util.List;
 @RequestMapping("/tasks-history")
 @RequiredArgsConstructor(onConstructor_ = {@Autowired})
 public class TaskHistoryController {
-    private TaskHistoryService taskHistoryService;
+    private final TaskHistoryService taskHistoryService;
 
     @GetMapping
     public List<TaskHistoryDto> getTaskHistories(

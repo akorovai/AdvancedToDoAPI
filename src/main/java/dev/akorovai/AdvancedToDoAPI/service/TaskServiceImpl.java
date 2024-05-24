@@ -9,19 +9,17 @@ import dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.CategoryNotFoun
 import dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.*;
 import dev.akorovai.AdvancedToDoAPI.repository.CategoryRepository;
 import dev.akorovai.AdvancedToDoAPI.repository.SubtaskRepository;
+import dev.akorovai.AdvancedToDoAPI.repository.TaskHistoryRepository;
 import dev.akorovai.AdvancedToDoAPI.repository.TaskRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Log4j2
@@ -34,23 +32,20 @@ public class TaskServiceImpl implements TaskService {
     private final SubtaskRepository subtaskRepository;
     private final ModelMapper modelMapper;
     private final CategoryRepository categoryRepository;
+    private final TaskHistoryRepository taskHistoryRepository;
+
 
     @Override
     public TaskDto getTaskById(Long IdTask) throws TaskNotFoundException {
-        Task task = taskRepository.findById(IdTask)
-                .orElseThrow(() -> new TaskNotFoundException(IdTask));
+        Task task = taskRepository.findById(IdTask).orElseThrow(() -> new TaskNotFoundException(IdTask));
         log.info("Retrieved task successfully: {}", task.getTitle());
 
-
-        List<SubtaskDto> subtaskDtos = task.getSubtasks().stream()
-                .map(subtask -> modelMapper.map(subtask, SubtaskDto.class))
-                .collect(Collectors.toList());
+        List<SubtaskDto> subtaskDtos = task.getSubtasks().stream().map(subtask -> modelMapper.map(subtask, SubtaskDto.class)).collect(Collectors.toList());
         TaskDto taskDto = modelMapper.map(task, TaskDto.class);
         taskDto.setSubtasks(subtaskDtos);
 
         return taskDto;
     }
-
 
     @Override
     public TaskDto addNewTask(NewTaskDto newTaskDto) {
@@ -58,34 +53,51 @@ public class TaskServiceImpl implements TaskService {
         validatePriority(newTaskDto.getPriority());
         validateSubtasks(newTaskDto);
 
-        Task newTask = modelMapper.map(newTaskDto, Task.class);
-        newTask.setStatus(Status.CREATED);
-
         Category category = categoryRepository.findById(newTaskDto.getIdCategory()).orElseThrow(() -> new CategoryNotFoundException(newTaskDto.getIdCategory()));
+
+
+        Task newTask = new Task();
+        newTask.setTitle(newTaskDto.getTitle());
+        newTask.setCategory(category);
+        newTask.setPriority(newTaskDto.getPriority());
+        newTask.setDescription(newTaskDto.getDescription());
+        newTask.setDueDate(newTaskDto.getDueDate());
+        newTask.setTaskType(newTaskDto.getTaskType());
+        newTask.setSubtasks(new HashSet<>());
+
+
+        newTask.setStatus(Status.CREATED);
         newTask.setCategory(category);
 
         Task savedTask = taskRepository.save(newTask);
-        saveSubtasks(savedTask, newTaskDto.getSubtasks());
+        Set<SubtaskDto> subtaskDtos = newTaskDto.getSubtasks();
+        if (Objects.nonNull(subtaskDtos)) {
+            int orderIndex = 0;
+            Set<Subtask> subtasks = new HashSet<>();
+            for (SubtaskDto dto : subtaskDtos) {
+                Subtask subtask = new Subtask();
+                subtask.setTitle(dto.getTitle());
+                subtask.setStatus(dto.getStatus());
+                subtask.setOrderIndex(orderIndex++);
+                subtask.setTask(savedTask);
+                subtasks.add(subtask);
+            }
+            subtaskRepository.saveAllAndFlush(subtasks);
+        }
+        saveTaskHistory(savedTask, "CREATE", savedTask.getStatus());
 
         log.info("New task added successfully: {}", savedTask.getTitle());
         return modelMapper.map(savedTask, TaskDto.class);
     }
 
-    private void saveSubtasks(Task task, Set<SubtaskDto> subtaskDtos) {
-        if (subtaskDtos != null) {
-            Set<Subtask> subtasks = subtaskDtos.stream().map(dto -> {
-                Subtask subtask = modelMapper.map(dto, Subtask.class);
-                subtask.setTask(task);
-                return subtask;
-            }).collect(Collectors.toSet());
-            subtaskRepository.saveAll(subtasks);
-        }
-    }
 
     @Override
     public void deleteTaskById(Long taskId) {
         Task task = taskRepository.findById(taskId).orElseThrow(() -> new TaskNotFoundException(taskId));
         taskRepository.delete(task);
+
+        saveTaskHistory(task, "DELETE", task.getStatus());
+
         log.info("Task deleted successfully with ID: {}", taskId);
     }
 
@@ -121,6 +133,9 @@ public class TaskServiceImpl implements TaskService {
         }
 
         Task updatedTask = taskRepository.save(task);
+
+        saveTaskHistory(updatedTask, "UPDATE", updatedTask.getStatus());
+
         log.info("Task modified successfully: {}", updatedTask.getId());
         return modelMapper.map(updatedTask, TaskDto.class);
     }
@@ -131,11 +146,17 @@ public class TaskServiceImpl implements TaskService {
         Status currentStatus = task.getStatus();
         Status newStatus = getNextStatus(currentStatus);
         task.setStatus(newStatus);
-        taskRepository.save(task);
+        Task updatedTask = taskRepository.save(task);
+
+        saveTaskHistory(updatedTask, "NEXT_STEP", newStatus);
 
         log.info("Task {} moved to next step. New status: {}", taskId, newStatus);
-        return modelMapper.map(task, TaskDto.class);
+
+        TaskDto taskDto = modelMapper.map(updatedTask, TaskDto.class);
+        log.info("Mapped Task to TaskDto: {}", taskDto);
+        return taskDto;
     }
+
 
     @Override
     public TaskDto moveToPreviousStep(Long taskId) {
@@ -143,21 +164,32 @@ public class TaskServiceImpl implements TaskService {
         Status currentStatus = task.getStatus();
         Status newStatus = getPreviousStatus(currentStatus);
         task.setStatus(newStatus);
-        taskRepository.save(task);
+        Task updatedTask = taskRepository.save(task); // Capture the updated task
+
+        saveTaskHistory(updatedTask, "PREVIOUS_STEP", newStatus);
 
         log.info("Task {} moved to previous step. New status: {}", taskId, newStatus);
-        return modelMapper.map(task, TaskDto.class);
+        return modelMapper.map(updatedTask, TaskDto.class); // Map the updatedTask to TaskDto
     }
+
 
     @Override
     public List<TaskDto> getAllTasksSorted(String sortBy) {
-        List<Task> tasks = switch (sortBy) {
-            case "status" -> taskRepository.findAll(Sort.by(Sort.Direction.ASC, "status"));
-            case "dueDate" -> taskRepository.findAll(Sort.by(Sort.Direction.ASC, "dueDate"));
-            default -> taskRepository.findAll();
-        };
+        List<Task> tasks = taskRepository.findAll();
+
+        if (sortBy.equals("status")) {
+            tasks.sort(Comparator.comparing(task -> task.getStatus().ordinal()));
+        }
+        if (sortBy.equals("dueDate")) {
+            tasks.sort(Comparator.comparing(Task::getDueDate));
+        }
+
+
+        log.debug("Sorted tasks: {}", tasks);
+
         return tasks.stream().map(task -> modelMapper.map(task, TaskDto.class)).collect(Collectors.toList());
     }
+
 
     private boolean isNotEmptyField(String field) {
         return field == null || field.trim().isEmpty();
@@ -197,5 +229,14 @@ public class TaskServiceImpl implements TaskService {
         if (newTaskDto.getTaskType() != TaskType.SIMPLE && (newTaskDto.getSubtasks() == null || newTaskDto.getSubtasks().size() < 2)) {
             throw new NotSimpleTaskWithInsufficientSubtasksException(newTaskDto.getSubtasks() != null ? newTaskDto.getSubtasks().size() : 0);
         }
+    }
+
+    private void saveTaskHistory(Task task, String action, Status newStatus) {
+        TaskHistory history = new TaskHistory();
+        history.setTask(task);
+        history.setAction(action);
+        history.setNewStatus(newStatus);
+        history.setTimestamp(LocalDateTime.now());
+        taskHistoryRepository.save(history);
     }
 }

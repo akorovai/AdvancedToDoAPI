@@ -26,6 +26,10 @@ public class TaskHistory {
     private Long id;
 
     @NotNull
+    @Column(name = "action", nullable = false)
+    private String action;
+
+    @NotNull
     @Column(name = "new_status", nullable = false)
     private Status newStatus;
 
@@ -45,8 +49,6 @@ public class TaskHistory {
     @UpdateTimestamp
     @Column(name = "modified_at",columnDefinition = "TIMESTAMP(3)")
     private LocalDateTime modifiedAt;
-
-
 
     @Override
     public boolean equals(Object o) {

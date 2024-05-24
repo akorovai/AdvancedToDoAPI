@@ -1,6 +1,5 @@
 package dev.akorovai.AdvancedToDoAPI.controller;
 
-
 import dev.akorovai.AdvancedToDoAPI.dto.ModifiedTaskDto;
 import dev.akorovai.AdvancedToDoAPI.dto.NewTaskDto;
 import dev.akorovai.AdvancedToDoAPI.dto.TaskDto;
@@ -48,7 +47,7 @@ public class TaskController {
 
     @PutMapping("/{IdTask}")
     @Transactional
-    public ResponseEntity<?> modifyTask(@RequestBody ModifiedTaskDto mtd, @PathVariable Long IdTask) {
+    public ResponseEntity<TaskDto> modifyTask(@RequestBody ModifiedTaskDto mtd, @PathVariable Long IdTask) {
         TaskDto response = taskService.modifyTask(IdTask, mtd);
         return ResponseEntity.ok(response);
     }

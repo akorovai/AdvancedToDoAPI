@@ -1,6 +1,6 @@
 #FileLock
-#Mon May 20 17:45:55 UTC 2024
+#Fri May 24 13:29:58 UTC 2024
 hostName=MiNotebookPro
-id=18f971c09dac6d0a748fdf5fc68c8ae3ac724d2ca87
+id=18faacb424bf3d1d70ef1a3c1bd1e57d07d7fab4733
 method=file
-server=172.29.16.184\:51797
+server=192.168.1.107\:49465

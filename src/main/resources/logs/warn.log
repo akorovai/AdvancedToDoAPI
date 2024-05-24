@@ -12,3 +12,142 @@ dev.akorovai.AdvancedToDoAPI.controller.TaskController#modifyTask(ModifiedTaskDt
 19:28:22.213 [http-nio-8080-exec-1] WARN  org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver - Resolved [dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException: Task with ID 1 does not exist]
 19:44:50.934 [restartedMain] WARN  org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: java.lang.TypeNotPresentException: Type dev.akorovai.AdvancedToDoAPI.entity.Task not present
 19:48:17.736 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m36s484ms703µs300ns).
+14:10:44.297 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:10:44.356 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:10:44.390 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:10:44.399 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:10:44.410 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:10:44.454 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:10:44.461 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.NotSimpleTaskWithInsufficientSubtasksException - A task other than SIMPLE must have at least two subtasks, but found only 0.
+14:13:13.216 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:13:13.295 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:13.320 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:13.331 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:13.339 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:13.377 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:13.388 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.NotSimpleTaskWithInsufficientSubtasksException - A task other than SIMPLE must have at least two subtasks, but found only 0.
+14:13:41.436 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:13:41.545 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:41.575 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:41.584 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:41.591 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:41.633 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:13:41.640 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.NotSimpleTaskWithInsufficientSubtasksException - A task other than SIMPLE must have at least two subtasks, but found only 0.
+14:15:16.491 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:15:16.567 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:15:16.588 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:15:16.599 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:15:16.611 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:15:16.650 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:15:16.657 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.NotSimpleTaskWithInsufficientSubtasksException - A task other than SIMPLE must have at least two subtasks, but found only 0.
+14:16:33.057 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:16:33.144 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:16:33.171 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:16:33.178 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:16:33.185 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:16:33.229 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:18:56.171 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:18:56.257 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:18:56.277 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:18:56.287 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:18:56.293 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:18:56.349 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:18:56.356 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:06.378 [main] ERROR dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskTypeNotFoundException - TaskType nullwasn't found
+14:20:06.464 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:06.485 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:06.493 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:06.501 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:06.545 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:36.900 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:36.922 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:36.930 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:36.939 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:20:36.983 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:22:40.071 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:23:57.257 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:24:49.332 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:24:49.358 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:24:49.365 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:24:49.372 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:24:49.418 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:24:49.426 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:32:43.105 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:32:43.126 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:32:43.133 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:32:43.140 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:32:43.195 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:32:43.200 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:33:14.667 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:33:33.855 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:33:33.877 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:33:33.885 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:33:33.893 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:33:33.951 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:33:33.956 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:36:45.201 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:36:45.230 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:36:45.243 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:36:45.254 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:36:45.319 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:36:45.327 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:48:16.448 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:48:16.469 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:48:16.479 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:48:16.486 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:48:16.573 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:48:16.580 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:49:57.449 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:50:59.596 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.CategoryNotFoundException - Category not found with ID: 1
+14:51:10.943 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.CategoryNotFoundException - Category not found with ID: 1
+14:51:11.001 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:51:11.021 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:51:11.028 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:51:11.035 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:51:11.102 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:51:11.107 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:52:52.078 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.CategoryNotFoundException - Category not found with ID: 1
+14:52:52.140 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:52:52.161 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:52:52.170 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:52:52.176 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:52:58.592 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:53:47.475 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:59:16.628 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+14:59:16.710 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:59:16.730 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:59:16.736 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:59:16.743 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:59:16.820 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+14:59:16.827 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+15:01:08.191 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.CategoryNotFoundException - Category not found with ID: 1
+15:01:08.256 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:01:08.279 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:01:08.285 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:01:08.294 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:01:08.375 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:03:59.386 [main] ERROR dev.akorovai.AdvancedToDoAPI.service.TaskServiceImpl - Mapped Task object is null
+15:06:43.615 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.CategoryNotFoundException - Category not found with ID: 1
+15:06:43.682 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:06:43.702 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:06:43.713 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:06:43.720 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:06:43.798 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:08:51.358 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.CategoryNotFoundException - Category not found with ID: 1
+15:08:51.415 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:08:51.433 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:08:51.440 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:08:51.449 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:08:51.518 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:30:38.268 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.CategoryNotFoundException - Category not found with ID: 1
+15:30:38.328 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:30:38.349 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:30:38.358 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:30:38.367 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:30:38.462 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:31:11.331 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.CategoryNotFoundException - Category not found with ID: 1
+15:31:11.386 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:31:11.405 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:31:11.413 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:31:11.422 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist
+15:31:11.499 [main] WARN  dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.TaskNotFoundException - Task with ID 1 does not exist

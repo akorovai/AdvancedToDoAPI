@@ -28,6 +28,5 @@ public class NewTaskDto {
 
     private Set<SubtaskDto> subtasks;
 
-    private Set<Long> labelIds;
 
 }
