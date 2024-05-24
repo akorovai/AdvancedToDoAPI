@@ -30,7 +30,6 @@ public class DataSeeder implements CommandLineRunner {
     }
 
     private void seedCategories() {
-        // Create sample categories
         Category category1 = new Category();
         category1.setName("Work");
         Category category2 = new Category();
@@ -41,7 +40,6 @@ public class DataSeeder implements CommandLineRunner {
     }
 
     private void seedTasks() {
-        // Create sample tasks
         Task task1 = new Task();
         task1.setTitle("Finish Project");
         task1.setDescription("Complete the project before the deadline.");
