@@ -58,7 +58,7 @@ Run the Application:
 API Documentation:
 
 The API is documented using Spring REST Docs. You can view the API documentation
-at http://localhost:8080/swagger-ui/index.html.
+at http://localhost:8080/advanced-to-do-api
 
 Testing:
 
