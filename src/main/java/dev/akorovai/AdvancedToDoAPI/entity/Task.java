@@ -43,7 +43,7 @@ public class Task {
     private LocalDateTime dueDate;
 
     @NotNull
-    @Column(name = "status", length = 10, nullable = false)
+    @Column(name = "status", length = 11, nullable = false)
     @Enumerated(EnumType.STRING)
     private Status status;
 
@@ -55,7 +55,7 @@ public class Task {
     @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<TaskHistory> histories;
 
-    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, fetch = FetchType.EAGER) 
+    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Subtask> subtasks;
 
 
@@ -94,4 +94,5 @@ public class Task {
     public int hashCode() {
         return getClass().hashCode();
     }
+
 }

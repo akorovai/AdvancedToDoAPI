@@ -16,9 +16,10 @@ public interface TaskService {
 
     TaskDto modifyTask(Long idTask, ModifiedTaskDto mtd);
 
-    TaskDto moveToNextStep(Long idTask);
+    TaskDto moveToNextStep(Long taskId, Long subtaskId);
 
-    TaskDto moveToPreviousStep(Long idTask);
+
+    TaskDto moveToPreviousStep(Long idTask, Long subtaskId);
 
     List<TaskDto> getAllTasksSorted(String sortBy);
 }

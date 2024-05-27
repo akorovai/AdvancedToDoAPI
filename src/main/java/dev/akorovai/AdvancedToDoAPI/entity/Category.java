@@ -38,7 +38,7 @@ public class Category {
     private LocalDateTime createdAt;
 
     @UpdateTimestamp
-    @Column(name = "modified_at",columnDefinition = "TIMESTAMP(3)")
+    @Column(name = "modified_at", columnDefinition = "TIMESTAMP(3)")
     private LocalDateTime modifiedAt;
 
     @Override
@@ -53,4 +53,11 @@ public class Category {
     public int hashCode() {
         return getClass().hashCode();
     }
+
+    @Override
+    public String toString() {
+        return "Category{" + "id=" + id + ", name='" + name + '\'' + '}';
+    }
+
+
 }

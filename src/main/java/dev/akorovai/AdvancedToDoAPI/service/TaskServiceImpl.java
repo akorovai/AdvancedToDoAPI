@@ -72,7 +72,7 @@ public class TaskServiceImpl implements TaskService {
         Task savedTask = taskRepository.save(newTask);
         Set<SubtaskDto> subtaskDtos = newTaskDto.getSubtasks();
         if (Objects.nonNull(subtaskDtos)) {
-            int orderIndex = 0;
+            int orderIndex = 1;
             Set<Subtask> subtasks = new HashSet<>();
             for (SubtaskDto dto : subtaskDtos) {
                 Subtask subtask = new Subtask();
@@ -92,14 +92,12 @@ public class TaskServiceImpl implements TaskService {
 
 
     @Override
-    public void deleteTaskById(Long taskId) {
+    public void deleteTaskById(Long taskId) throws TaskNotFoundException {
         Task task = taskRepository.findById(taskId).orElseThrow(() -> new TaskNotFoundException(taskId));
         taskRepository.delete(task);
-
-        saveTaskHistory(task, "DELETE", task.getStatus());
-
-        log.info("Task deleted successfully with ID: {}", taskId);
+        log.info("Task with id {} deleted successfully", taskId);
     }
+
 
     @Override
     public TaskDto modifyTask(Long idTask, ModifiedTaskDto mtd) {
@@ -141,35 +139,52 @@ public class TaskServiceImpl implements TaskService {
     }
 
     @Override
-    public TaskDto moveToNextStep(Long taskId) {
+    public TaskDto moveToNextStep(Long taskId, Long subtaskId) {
         Task task = taskRepository.findById(taskId).orElseThrow(() -> new TaskNotFoundException(taskId));
-        Status currentStatus = task.getStatus();
-        Status newStatus = getNextStatus(currentStatus);
+        Status newStatus = getNextStatus(task.getStatus(), task.getTaskType());
         task.setStatus(newStatus);
+
+
         Task updatedTask = taskRepository.save(task);
+        saveTaskHistory(updatedTask, "NEXT_STEP", task.getStatus());
 
-        saveTaskHistory(updatedTask, "NEXT_STEP", newStatus);
+        log.info("Task {} moved to next step. New status: {}", taskId, task.getStatus());
+        TaskDto taskDto = modelMapper.map(updatedTask, TaskDto.class);
+        log.info("Mapped Task to TaskDto: {}", taskDto);
+        return taskDto;
+    }
 
-        log.info("Task {} moved to next step. New status: {}", taskId, newStatus);
+    @Override
+    public TaskDto moveToPreviousStep(Long taskId, Long subtaskId) {
+        Task task = taskRepository.findById(taskId).orElseThrow(() -> new TaskNotFoundException(taskId));
+        Status newStatus = getPreviousStatus(task.getStatus(), task.getTaskType());
+        task.setStatus(newStatus);
 
+
+        Task updatedTask = taskRepository.save(task);
+        saveTaskHistory(updatedTask, "PREVIOUS_STEP", task.getStatus());
+
+        log.info("Task {} moved to previous step. New status: {}", taskId, task.getStatus());
         TaskDto taskDto = modelMapper.map(updatedTask, TaskDto.class);
         log.info("Mapped Task to TaskDto: {}", taskDto);
         return taskDto;
     }
 
 
-    @Override
-    public TaskDto moveToPreviousStep(Long taskId) {
-        Task task = taskRepository.findById(taskId).orElseThrow(() -> new TaskNotFoundException(taskId));
-        Status currentStatus = task.getStatus();
-        Status newStatus = getPreviousStatus(currentStatus);
-        task.setStatus(newStatus);
-        Task updatedTask = taskRepository.save(task); // Capture the updated task
+    private Status getNextStatus(Status currentStatus, TaskType taskType) {
+        return switch (currentStatus) {
+            case CREATED -> Status.IN_PROGRESS;
+            case IN_PROGRESS -> Status.DONE;
+            default -> throw new InappropriateProgressStatusException(currentStatus);
+        };
+    }
 
-        saveTaskHistory(updatedTask, "PREVIOUS_STEP", newStatus);
-
-        log.info("Task {} moved to previous step. New status: {}", taskId, newStatus);
-        return modelMapper.map(updatedTask, TaskDto.class); // Map the updatedTask to TaskDto
+    private Status getPreviousStatus(Status currentStatus, TaskType taskType) {
+        return switch (currentStatus) {
+            case DONE -> Status.IN_PROGRESS;
+            case IN_PROGRESS -> Status.CREATED;
+            default -> throw new InappropriateProgressStatusException(currentStatus);
+        };
     }
 
 

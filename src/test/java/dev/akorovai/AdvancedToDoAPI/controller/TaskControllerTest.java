@@ -112,10 +112,10 @@ public class TaskControllerTest {
         // Arrange
         TaskDto taskDto = new TaskDto();
         taskDto.setTitle("Next Step Task");
-        when(taskService.moveToNextStep(anyLong())).thenReturn(taskDto);
+        when(taskService.moveToNextStep(anyLong(), anyLong())).thenReturn(taskDto);
 
         // Act
-        ResponseEntity<TaskDto> response = taskController.changeStatusToNextStep(1L);
+        ResponseEntity<TaskDto> response = taskController.changeStatusToNextStep(1L, null);
 
         // Assert
         assertEquals(HttpStatus.OK, response.getStatusCode());
@@ -127,10 +127,10 @@ public class TaskControllerTest {
         // Arrange
         TaskDto taskDto = new TaskDto();
         taskDto.setTitle("Previous Step Task");
-        when(taskService.moveToPreviousStep(anyLong())).thenReturn(taskDto);
+        when(taskService.moveToPreviousStep(anyLong(), anyLong())).thenReturn(taskDto);
 
         // Act
-        ResponseEntity<TaskDto> response = taskController.changeStatusToPreviousStep(1L);
+        ResponseEntity<TaskDto> response = taskController.changeStatusToPreviousStep(1L, null);
 
         // Assert
         assertEquals(HttpStatus.OK, response.getStatusCode());

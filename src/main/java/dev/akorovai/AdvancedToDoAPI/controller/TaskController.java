@@ -54,15 +54,15 @@ public class TaskController {
 
     @PutMapping("/{IdTask}/next")
     @Transactional
-    public ResponseEntity<TaskDto> changeStatusToNextStep(@PathVariable Long IdTask) {
-        TaskDto response = taskService.moveToNextStep(IdTask);
+    public ResponseEntity<TaskDto> changeStatusToNextStep(@PathVariable Long IdTask, @RequestParam(required = false) Long subtaskId) {
+        TaskDto response = taskService.moveToNextStep(IdTask, subtaskId);
         return ResponseEntity.ok(response);
     }
 
     @PutMapping("/{IdTask}/previous")
     @Transactional
-    public ResponseEntity<TaskDto> changeStatusToPreviousStep(@PathVariable Long IdTask) {
-        TaskDto response = taskService.moveToPreviousStep(IdTask);
+    public ResponseEntity<TaskDto> changeStatusToPreviousStep(@PathVariable Long IdTask, @RequestParam(required = false) Long subtaskId) {
+        TaskDto response = taskService.moveToPreviousStep(IdTask, subtaskId);
         return ResponseEntity.ok(response);
     }
 }

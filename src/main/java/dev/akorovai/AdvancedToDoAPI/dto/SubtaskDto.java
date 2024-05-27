@@ -15,4 +15,6 @@ public class SubtaskDto {
     private String title;
 
     private Status status;
+
+    private Long orderIndex;
 }

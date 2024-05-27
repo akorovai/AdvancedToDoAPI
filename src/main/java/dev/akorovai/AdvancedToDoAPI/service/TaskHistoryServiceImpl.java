@@ -26,9 +26,6 @@ public class TaskHistoryServiceImpl implements TaskHistoryService {
 
     @Override
     public List<TaskHistoryDto> getTaskHistories(Long taskId, LocalDateTime from, LocalDateTime to, String sortBy) {
-        if (from == null) from = LocalDateTime.MIN;
-        if (to == null) to = LocalDateTime.MAX;
-
         Specification<TaskHistory> specification = Specification
                 .where(TaskHistorySpecification.hasTaskId(taskId))
                 .and(TaskHistorySpecification.timestampBetween(from, to));
@@ -39,6 +36,7 @@ public class TaskHistoryServiceImpl implements TaskHistoryService {
                 .map(this::convertToDto)
                 .collect(Collectors.toList());
     }
+
 
     private TaskHistoryDto convertToDto(TaskHistory taskHistory) {
         TaskHistoryDto taskHistoryDto = modelMapper.map(taskHistory, TaskHistoryDto.class);
