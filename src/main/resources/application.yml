@@ -1,0 +1,25 @@
+spring:
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:file:./data/tasks;AUTO_SERVER=true
+    driver-class-name: org.h2.Driver
+    username: akorovai
+    password: password
+  profiles:
+    active: prod
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.H2Dialect
+    open-in-view: false
+    defer-datasource-initialization: true
+
+
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true
+    path: /advanced-to-do-api

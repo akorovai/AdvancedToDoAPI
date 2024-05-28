@@ -24,6 +24,7 @@ public class TaskHistoryServiceImpl implements TaskHistoryService {
     private final ModelMapper modelMapper;
     private final TaskHistoryRepository taskHistoryRepository;
 
+
     @Override
     public List<TaskHistoryDto> getTaskHistories(Long taskId, LocalDateTime from, LocalDateTime to, String sortBy) {
         Specification<TaskHistory> specification = Specification

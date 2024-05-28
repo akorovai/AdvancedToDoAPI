@@ -1,4 +1,4 @@
-package dev.akorovai.AdvancedToDoAPI;
+package dev.akorovai.AdvancedToDoAPI.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
