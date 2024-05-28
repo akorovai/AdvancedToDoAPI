@@ -38,7 +38,7 @@ public class AdvancedToDoApiApplication implements CommandLineRunner {
 
         System.out.println("\nSwagger-UI Configuration:");
         System.out.println("Disable Swagger Default URL: " + myConfig.getSpringdoc().getSwaggerUi().isDisableSwaggerDefaultUrl());
-        System.out.println("Path: " + myConfig.getSpringdoc().getSwaggerUi().getPath());
+        System.out.println("Path: " + myConfig.getSpringdoc().getSwaggerUi());
 
         System.out.println("\nJPA Configuration:");
         System.out.println("Show SQL: " + myConfig.getJpa().isShowSql());
