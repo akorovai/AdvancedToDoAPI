@@ -6,6 +6,7 @@ import dev.akorovai.AdvancedToDoAPI.dto.SubtaskDto;
 import dev.akorovai.AdvancedToDoAPI.dto.TaskDto;
 import dev.akorovai.AdvancedToDoAPI.entity.*;
 import dev.akorovai.AdvancedToDoAPI.exception.categoryExceptions.CategoryNotFoundException;
+import dev.akorovai.AdvancedToDoAPI.exception.subtaskExceptionHandler.SubtaskNotFoundException;
 import dev.akorovai.AdvancedToDoAPI.exception.taskExceptionHandler.*;
 import dev.akorovai.AdvancedToDoAPI.repository.CategoryRepository;
 import dev.akorovai.AdvancedToDoAPI.repository.SubtaskRepository;
@@ -34,7 +35,6 @@ public class TaskServiceImpl implements TaskService {
     private final CategoryRepository categoryRepository;
     private final TaskHistoryRepository taskHistoryRepository;
 
-
     @Override
     public TaskDto getTaskById(Long IdTask) throws TaskNotFoundException {
         Task task = taskRepository.findById(IdTask).orElseThrow(() -> new TaskNotFoundException(IdTask));
@@ -55,7 +55,6 @@ public class TaskServiceImpl implements TaskService {
 
         Category category = categoryRepository.findById(newTaskDto.getIdCategory()).orElseThrow(() -> new CategoryNotFoundException(newTaskDto.getIdCategory()));
 
-
         Task newTask = new Task();
         newTask.setTitle(newTaskDto.getTitle());
         newTask.setCategory(category);
@@ -64,10 +63,7 @@ public class TaskServiceImpl implements TaskService {
         newTask.setDueDate(newTaskDto.getDueDate());
         newTask.setTaskType(newTaskDto.getTaskType());
         newTask.setSubtasks(new HashSet<>());
-
-
         newTask.setStatus(Status.CREATED);
-        newTask.setCategory(category);
 
         Task savedTask = taskRepository.save(newTask);
         Set<SubtaskDto> subtaskDtos = newTaskDto.getSubtasks();
@@ -90,14 +86,12 @@ public class TaskServiceImpl implements TaskService {
         return modelMapper.map(savedTask, TaskDto.class);
     }
 
-
     @Override
     public void deleteTaskById(Long taskId) throws TaskNotFoundException {
         Task task = taskRepository.findById(taskId).orElseThrow(() -> new TaskNotFoundException(taskId));
         taskRepository.delete(task);
         log.info("Task with id {} deleted successfully", taskId);
     }
-
 
     @Override
     public TaskDto modifyTask(Long idTask, ModifiedTaskDto mtd) {
@@ -131,7 +125,6 @@ public class TaskServiceImpl implements TaskService {
         }
 
         Task updatedTask = taskRepository.save(task);
-
         saveTaskHistory(updatedTask, "UPDATE", updatedTask.getStatus());
 
         log.info("Task modified successfully: {}", updatedTask.getId());
@@ -141,9 +134,8 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public TaskDto moveToNextStep(Long taskId, Long subtaskId) {
         Task task = taskRepository.findById(taskId).orElseThrow(() -> new TaskNotFoundException(taskId));
-        Status newStatus = getNextStatus(task.getStatus(), task.getTaskType());
+        Status newStatus = getNextStatus(task.getStatus(), task.getTaskType(), task, subtaskId);
         task.setStatus(newStatus);
-
 
         Task updatedTask = taskRepository.save(task);
         saveTaskHistory(updatedTask, "NEXT_STEP", task.getStatus());
@@ -157,9 +149,8 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public TaskDto moveToPreviousStep(Long taskId, Long subtaskId) {
         Task task = taskRepository.findById(taskId).orElseThrow(() -> new TaskNotFoundException(taskId));
-        Status newStatus = getPreviousStatus(task.getStatus(), task.getTaskType());
+        Status newStatus = getPreviousStatus(task.getStatus(), task.getTaskType(), task, subtaskId);
         task.setStatus(newStatus);
-
 
         Task updatedTask = taskRepository.save(task);
         saveTaskHistory(updatedTask, "PREVIOUS_STEP", task.getStatus());
@@ -170,22 +161,84 @@ public class TaskServiceImpl implements TaskService {
         return taskDto;
     }
 
+    private Status getNextStatus(Status currentStatus, TaskType taskType, Task task, Long subtaskId) {
+        switch (taskType) {
+            case SIMPLE:
+                return switch (currentStatus) {
+                    case CREATED -> Status.IN_PROGRESS;
+                    case IN_PROGRESS -> Status.DONE;
+                    default -> throw new InappropriateProgressStatusException(currentStatus);
+                };
+            case ORDERED:
+                List<Subtask> orderedSubtasks = task.getSubtasks().stream()
+                        .sorted(Comparator.comparingInt(Subtask::getOrderIndex))
+                        .toList();
+                for (Subtask subtask : orderedSubtasks) {
+                    if (subtask.getStatus() != Status.DONE) {
+                        subtask.setStatus(Status.DONE);
+                        subtaskRepository.save(subtask);
+                        return Status.IN_PROGRESS;
+                    }
+                }
+                return Status.DONE;
+            case SUMMARY:
 
-    private Status getNextStatus(Status currentStatus, TaskType taskType) {
-        return switch (currentStatus) {
-            case CREATED -> Status.IN_PROGRESS;
-            case IN_PROGRESS -> Status.DONE;
-            default -> throw new InappropriateProgressStatusException(currentStatus);
-        };
+
+                Subtask summarySubtask = subtaskRepository.findById(subtaskId)
+                        .orElseThrow(() -> new SubtaskNotFoundException(subtaskId));
+                if (summarySubtask.getStatus() == Status.DONE) {
+                    throw new InappropriateProgressStatusException(summarySubtask.getStatus());
+                }
+                summarySubtask.setStatus(Status.DONE);
+                subtaskRepository.save(summarySubtask);
+
+                boolean allSubtasksDone = task.getSubtasks().stream().allMatch(st -> st.getStatus() == Status.DONE);
+
+                return allSubtasksDone ? Status.DONE : Status.IN_PROGRESS;
+            default:
+                throw new IllegalArgumentException("Unknown task type: " + taskType);
+        }
     }
 
-    private Status getPreviousStatus(Status currentStatus, TaskType taskType) {
-        return switch (currentStatus) {
-            case DONE -> Status.IN_PROGRESS;
-            case IN_PROGRESS -> Status.CREATED;
-            default -> throw new InappropriateProgressStatusException(currentStatus);
-        };
+    private Status getPreviousStatus(Status currentStatus, TaskType taskType, Task task, Long subtaskId) {
+        switch (taskType) {
+            case SIMPLE:
+                return switch (currentStatus) {
+                    case DONE -> Status.IN_PROGRESS;
+                    case IN_PROGRESS -> Status.CREATED;
+                    default -> throw new InappropriateProgressStatusException(currentStatus);
+                };
+            case ORDERED:
+                List<Subtask> orderedSubtasks = task.getSubtasks().stream()
+                        .sorted(Comparator.comparingInt(Subtask::getOrderIndex).reversed())
+                        .toList();
+                for (Subtask subtask : orderedSubtasks) {
+                    if (subtask.getStatus() == Status.DONE) {
+                        subtask.setStatus(Status.IN_PROGRESS);
+                        subtaskRepository.save(subtask);
+                        return Status.IN_PROGRESS;
+                    }
+                }
+                return Status.CREATED;
+            case SUMMARY:
+
+
+                Subtask summarySubtask = subtaskRepository.findById(subtaskId)
+                        .orElseThrow(() -> new SubtaskNotFoundException(subtaskId));
+                if (summarySubtask.getStatus() == Status.CREATED) {
+                    throw new InappropriateProgressStatusException(summarySubtask.getStatus());
+                }
+                summarySubtask.setStatus(Status.DONE);
+                subtaskRepository.save(summarySubtask);
+
+                boolean anySubtasksNotDone = task.getSubtasks().stream().anyMatch(st -> st.getStatus() != Status.DONE);
+
+                return anySubtasksNotDone ? Status.IN_PROGRESS : Status.CREATED;
+            default:
+                throw new IllegalArgumentException("Unknown task type: " + taskType);
+        }
     }
+
 
 
     @Override
@@ -199,31 +252,13 @@ public class TaskServiceImpl implements TaskService {
             tasks.sort(Comparator.comparing(Task::getDueDate));
         }
 
-
         log.debug("Sorted tasks: {}", tasks);
 
         return tasks.stream().map(task -> modelMapper.map(task, TaskDto.class)).collect(Collectors.toList());
     }
 
-
     private boolean isNotEmptyField(String field) {
         return field == null || field.trim().isEmpty();
-    }
-
-    private Status getNextStatus(Status currentStatus) {
-        return switch (currentStatus) {
-            case CREATED -> Status.IN_PROGRESS;
-            case IN_PROGRESS -> Status.DONE;
-            default -> throw new InappropriateProgressStatusException(currentStatus);
-        };
-    }
-
-    private Status getPreviousStatus(Status currentStatus) {
-        return switch (currentStatus) {
-            case DONE -> Status.IN_PROGRESS;
-            case IN_PROGRESS -> Status.CREATED;
-            default -> throw new InappropriateProgressStatusException(currentStatus);
-        };
     }
 
     private void validateTaskType(NewTaskDto newTaskDto) {

@@ -2,6 +2,7 @@ package dev.akorovai.AdvancedToDoAPI.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.NestedConfigurationProperty;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
@@ -31,6 +32,16 @@ public class YAMLConfig {
         private String driverClassName;
         private String username;
         private String password;
+        @NestedConfigurationProperty
+        private Hikari hikari = new Hikari();
+
+        @Data
+        public static class Hikari {
+            private int connectionTimeout;
+            private int maximumPoolSize;
+            private int minimumIdle;
+            private int idleTimeout;
+        }
     }
 
     @Data
@@ -49,6 +60,14 @@ public class YAMLConfig {
         @Data
         public static class Hibernate {
             private String ddlAuto;
+            @NestedConfigurationProperty
+            private Properties properties = new Properties();
+
+            @Data
+            public static class Properties {
+                private int jdbcBatchSize;
+                private boolean formatSql;
+            }
         }
     }
 
@@ -59,6 +78,7 @@ public class YAMLConfig {
         @Data
         public static class SwaggerUi {
             private boolean disableSwaggerDefaultUrl;
+            private String path;
         }
     }
 }

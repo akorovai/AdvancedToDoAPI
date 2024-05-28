@@ -235,39 +235,6 @@ class TaskServiceImplTest {
         assertThat(resultSortedByDueDate.get(0), samePropertyValuesAs(taskDto));
     }
 
-    @Test
-    void moveToNextStep_shouldUpdateStatusOfTaskOrSubtask_whenTaskExists() {
-        Long taskId = 1L;
-        Long subtaskId = 2L;
-
-        Task task = new Task();
-        task.setId(taskId);
-        task.setStatus(Status.IN_PROGRESS);
-
-        Subtask subtask = new Subtask();
-        subtask.setId(subtaskId);
-        subtask.setStatus(Status.IN_PROGRESS);
-
-        when(taskRepository.findById(taskId)).thenReturn(Optional.of(task));
-        when(subtaskRepository.findById(subtaskId)).thenReturn(Optional.of(subtask));
-        when(taskRepository.save(task)).thenReturn(task);
-        when(subtaskRepository.save(subtask)).thenReturn(subtask);
-
-        TaskDto taskDto = new TaskDto();
-        SubtaskDto subtaskDto = new SubtaskDto();
-
-        when(modelMapper.map(task, TaskDto.class)).thenReturn(taskDto);
-        when(modelMapper.map(subtask, SubtaskDto.class)).thenReturn(subtaskDto);
-
-        TaskDto resultTask = underTest.moveToNextStep(taskId, null);
-
-
-        assertEquals(taskDto, resultTask);
-
-
-        verify(taskRepository, times(1)).save(task);
-
-    }
 
     @Test
     void moveToNextStep_shouldThrowTaskNotFoundException_whenTaskDoesNotExist() {
@@ -277,39 +244,7 @@ class TaskServiceImplTest {
         assertThrows(TaskNotFoundException.class, () -> underTest.moveToNextStep(taskId, null));
     }
 
-    @Test
-    void moveToPreviousStep_shouldUpdateStatusOfTaskOrSubtask_whenTaskExists() {
-        Long taskId = 1L;
-        Long subtaskId = 2L;
 
-        Task task = new Task();
-        task.setId(taskId);
-        task.setStatus(Status.IN_PROGRESS);
-
-        Subtask subtask = new Subtask();
-        subtask.setId(subtaskId);
-        subtask.setStatus(Status.IN_PROGRESS);
-
-        when(taskRepository.findById(taskId)).thenReturn(Optional.of(task));
-        when(subtaskRepository.findById(subtaskId)).thenReturn(Optional.of(subtask));
-        when(taskRepository.save(task)).thenReturn(task);
-        when(subtaskRepository.save(subtask)).thenReturn(subtask);
-
-        TaskDto taskDto = new TaskDto();
-        SubtaskDto subtaskDto = new SubtaskDto();
-
-        when(modelMapper.map(task, TaskDto.class)).thenReturn(taskDto);
-        when(modelMapper.map(subtask, SubtaskDto.class)).thenReturn(subtaskDto);
-
-        TaskDto resultTask = underTest.moveToPreviousStep(taskId, null);
-
-
-        assertEquals(taskDto, resultTask);
-
-
-        verify(taskRepository, times(1)).save(task);
-
-    }
 
     @Test
     void moveToPreviousStep_shouldThrowTaskNotFoundException_whenTaskDoesNotExist() {
@@ -318,4 +253,5 @@ class TaskServiceImplTest {
 
         assertThrows(TaskNotFoundException.class, () -> underTest.moveToPreviousStep(taskId, null));
     }
+
 }

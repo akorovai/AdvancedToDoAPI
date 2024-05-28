@@ -20,7 +20,7 @@ public class DataSeeder implements CommandLineRunner {
     private final TaskRepository taskRepository;
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         seedData();
     }
 

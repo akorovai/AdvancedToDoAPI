@@ -8,16 +8,25 @@ spring:
     driver-class-name: org.h2.Driver
     username: akorovai
     password: password
+    hikari:
+      connection-timeout: 30000
+      maximum-pool-size: 10
+      minimum-idle: 5
+      idle-timeout: 600000
+
   profiles:
     active: prod
+
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: create
-    database-platform: org.hibernate.dialect.H2Dialect
     open-in-view: false
     defer-datasource-initialization: true
-
+    properties:
+      hibernate:
+        jdbc.batch_size: 20
+        format_sql: true
 
 springdoc:
   swagger-ui:
