@@ -11,7 +11,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.jpa.domain.Specification;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -47,7 +46,9 @@ class TaskHistoryServiceImplTest {
         List<TaskHistory> taskHistoryList = new ArrayList<>();
         taskHistoryList.add(taskHistory);
 
-        when(taskHistoryRepository.findAll(any(Specification.class), any(Sort.class))).thenReturn(taskHistoryList);
+        // Mock the repository method call
+        when(taskHistoryRepository.findByTaskIdAndTimestampBetween(eq(taskId), eq(from), eq(to), any(Sort.class)))
+                .thenReturn(taskHistoryList);
 
         TaskHistoryDto taskHistoryDto = new TaskHistoryDto();
         taskHistoryDto.setId(1L);
@@ -63,7 +64,10 @@ class TaskHistoryServiceImplTest {
         assertEquals(1L, resultDto.getId());
         assertEquals(taskId, resultDto.getIdTask());
 
-        verify(taskHistoryRepository, times(1)).findAll(any(Specification.class), any(Sort.class));
+        // Verify repository method call
+        verify(taskHistoryRepository, times(1))
+                .findByTaskIdAndTimestampBetween(eq(taskId), eq(from), eq(to), any(Sort.class));
         verify(modelMapper, times(1)).map(any(TaskHistory.class), eq(TaskHistoryDto.class));
     }
+
 }

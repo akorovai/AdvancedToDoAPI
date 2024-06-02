@@ -40,7 +40,9 @@ public class TaskServiceImpl implements TaskService {
         Task task = taskRepository.findById(IdTask).orElseThrow(() -> new TaskNotFoundException(IdTask));
         log.info("Retrieved task successfully: {}", task.getTitle());
 
-        List<SubtaskDto> subtaskDtos = task.getSubtasks().stream().map(subtask -> modelMapper.map(subtask, SubtaskDto.class)).collect(Collectors.toList());
+        List<SubtaskDto> subtaskDtos = task.getSubtasks().stream()
+                .map(subtask -> modelMapper.map(subtask, SubtaskDto.class))
+                .collect(Collectors.toList());
         TaskDto taskDto = modelMapper.map(task, TaskDto.class);
         taskDto.setSubtasks(subtaskDtos);
 
@@ -53,7 +55,8 @@ public class TaskServiceImpl implements TaskService {
         validatePriority(newTaskDto.getPriority());
         validateSubtasks(newTaskDto);
 
-        Category category = categoryRepository.findById(newTaskDto.getIdCategory()).orElseThrow(() -> new CategoryNotFoundException(newTaskDto.getIdCategory()));
+        Category category = categoryRepository.findById(newTaskDto.getIdCategory())
+                .orElseThrow(() -> new CategoryNotFoundException(newTaskDto.getIdCategory()));
 
         Task newTask = new Task();
         newTask.setTitle(newTaskDto.getTitle());
@@ -90,6 +93,7 @@ public class TaskServiceImpl implements TaskService {
     public void deleteTaskById(Long taskId) throws TaskNotFoundException {
         Task task = taskRepository.findById(taskId).orElseThrow(() -> new TaskNotFoundException(taskId));
         taskRepository.delete(task);
+        saveTaskHistory(task, "DELETE", task.getStatus());
         log.info("Task with id {} deleted successfully", taskId);
     }
 
@@ -182,8 +186,6 @@ public class TaskServiceImpl implements TaskService {
                 }
                 return Status.DONE;
             case SUMMARY:
-
-
                 Subtask summarySubtask = subtaskRepository.findById(subtaskId)
                         .orElseThrow(() -> new SubtaskNotFoundException(subtaskId));
                 if (summarySubtask.getStatus() == Status.DONE) {
@@ -221,8 +223,6 @@ public class TaskServiceImpl implements TaskService {
                 }
                 return Status.CREATED;
             case SUMMARY:
-
-
                 Subtask summarySubtask = subtaskRepository.findById(subtaskId)
                         .orElseThrow(() -> new SubtaskNotFoundException(subtaskId));
                 if (summarySubtask.getStatus() == Status.CREATED) {
@@ -238,8 +238,6 @@ public class TaskServiceImpl implements TaskService {
                 throw new IllegalArgumentException("Unknown task type: " + taskType);
         }
     }
-
-
 
     @Override
     public List<TaskDto> getAllTasksSorted(String sortBy) {
@@ -262,7 +260,8 @@ public class TaskServiceImpl implements TaskService {
     }
 
     private void validateTaskType(NewTaskDto newTaskDto) {
-        Arrays.stream(TaskType.values()).filter(taskType -> taskType == newTaskDto.getTaskType()).findAny().orElseThrow(() -> new TaskTypeNotFoundException(newTaskDto.getTaskType()));
+        Arrays.stream(TaskType.values()).filter(taskType -> taskType == newTaskDto.getTaskType())
+                .findAny().orElseThrow(() -> new TaskTypeNotFoundException(newTaskDto.getTaskType()));
     }
 
     private void validatePriority(Character priority) {
@@ -276,8 +275,10 @@ public class TaskServiceImpl implements TaskService {
             throw new SimpleTaskWithSubtasksException();
         }
 
-        if (newTaskDto.getTaskType() != TaskType.SIMPLE && (newTaskDto.getSubtasks() == null || newTaskDto.getSubtasks().size() < 2)) {
-            throw new NotSimpleTaskWithInsufficientSubtasksException(newTaskDto.getSubtasks() != null ? newTaskDto.getSubtasks().size() : 0);
+        if (newTaskDto.getTaskType() != TaskType.SIMPLE &&
+                (newTaskDto.getSubtasks() == null || newTaskDto.getSubtasks().size() < 2)) {
+            throw new NotSimpleTaskWithInsufficientSubtasksException(
+                    newTaskDto.getSubtasks() != null ? newTaskDto.getSubtasks().size() : 0);
         }
     }
 
