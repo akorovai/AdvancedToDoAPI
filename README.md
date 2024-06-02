@@ -64,5 +64,3 @@ Testing:
 
 The project includes unit and integration tests using JUnit and Mockito. You can run the tests using mvn test.
 
-I've removed redundant information and grouped related technologies (e.g., Spring Boot includes Spring MVC and Spring
-Data JPA).
