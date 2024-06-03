@@ -1,16 +1,18 @@
 package dev.akorovai.AdvancedToDoAPI.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import dev.akorovai.AdvancedToDoAPI.entity.TaskType;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.Set;
 
 @Getter
 @Setter
+@Builder
+@AllArgsConstructor
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_EMPTY)
 public class NewTaskDto {
 
     private String title;
